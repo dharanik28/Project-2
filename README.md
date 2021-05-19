@@ -8,4 +8,4 @@ Read through the [Documentation](https://github.com/dharanik28/Project-2/tree/ma
 [Red Team](https://github.com/dharanik28/Project-2/blob/master/Documentation/RedTeam.md) and 
 [Blue Team](https://github.com/dharanik28/Project-2/blob/master/Documentation/BlueTeam.md) perspective that lead up to creation of the final presetation.
 
-View the final Google slide project [presentation here]().
+View the final Google slide project [presentation here](https://github.com/dharanik28/Project-2/tree/master/Project2-Presentation.pptx).

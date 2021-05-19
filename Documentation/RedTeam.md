@@ -11,7 +11,7 @@ Result:
 
 IP 192.168.1.8 and Netmask 255.255.255.0
 
-![ifconfig terminal results](/Images/ifconfig-results.png "ifconfig terminal results")
+![ifconfig terminal results](/Images/ifconfig-results.PNG "ifconfig terminal results")
 
 Next was to scan all IPs on the same network in the subnet. Knowing the subnet of netmask of 255.255.255.0 is /24 it can be established in the nmap scan.
 
@@ -23,7 +23,7 @@ Result:
 
 IP 192.168.1.105
 
-![nmap terminal results](/Images/nmap-results.png "nmap terminal results")
+![nmap terminal results](/Images/nMap-results.PNG "nmap terminal results")
 
 While there were other machines on the network it could be determined that IP ending with 105 was the machine we were looking for. This is based on the list of directories found and it returns as Apache/2.4.29 server.
 
@@ -67,7 +67,7 @@ login: ashton
 
 password: leopoldo
 
-![Hydra results](/Images/hydra-results.png "Hydra results")
+![Hydra results](/Images/hydra-results.PNG "Hydra results")
 
 ### Break the hashed password with the Crack Station website or John the Ripper.
 Once the password was determined for user ashton the secret_folder can now be navigated to using username ashton and password leopoldo. 
@@ -82,7 +82,7 @@ Note found:
 
 Using CrackStation to crack the hash from the note:
 
-![Crackstation results](/Images/crackstation-results.png "Crackstation results")
+![Crackstation results](/Images/crackstation-results.PNG "Crackstation results")
 
 Next is to access the WebDav server with username ryan and password linux4u.
 
@@ -104,7 +104,7 @@ Commands:
 
 `Password: linux4u`
 
-![Cadaver server connection](/Images/cadaver-server-connection.png "Cadaver server connection")
+![Cadaver server connection](/Images/cadaver-server-connection.PNG "Cadaver server connection")
 
 Once in the /webdav folder it was time to go to the next step. Now that access to WebDav server was established this is a way to upload an exploit.
 
@@ -115,7 +115,7 @@ Once in the File Manager on the left hand side click on Browse Network.
 
 Then navigate to dav://192.168.1.105/webdav using the folder search bar.
 
-![WebDav file manager](/Images/webdav-file-manager.png "WebDav file manager")
+![WebDav file manager](/Images/webdav-file-manager.PNG "WebDav file manager")
 
 ### Upload a PHP reverse shell payload.
 
@@ -147,7 +147,7 @@ Results:
 
 A file called shell.php is now created/in root and ready to move to upload to WebDav server.
 
-![MSFvenom reverse tcp script](/Images/shell-payload.png "MSFvenom reverse tcp script")
+![MSFvenom reverse tcp script](/Images/shell-payload.PNG "MSFvenom reverse tcp script")
 
 Time to go back to WebDav server. Once again Cadaver was used to access the server and upload the payload.php payload. This will be done using username ryan and password linux4u just as done before.
 
@@ -167,7 +167,7 @@ Result:
 
 payload.php was uploaded to to the WebDav server
 
-![shell.php uploaded to WebDav](/Images/shell-upload-webdav.png "shell.php uploaded to WebDav")
+![shell.php uploaded to WebDav](/Images/shell-upload-webdav.PNG "shell.php uploaded to WebDav")
 
 This could have been done via the File Manager as well. Shell.php could have been dragged and dropped into WebDav in the file/folder GUI.
 
@@ -188,17 +188,17 @@ Commands:
 
 `run`
 
-![Meterperter session creation](/Images/meterpreter-session.png "Meterperter session creation")
+![Meterperter session creation](/Images/meterpreter-session.PNG "Meterperter session creation")
 
 After the run command the shell.php should be run. This is done by navigating to the file by going to http://192.168.1.105/webdav/shell.php.
 
 Then ryan’s credentials can be used.
 
-![open Meterperter session via user Ryan](/Images/open-shell-session.png "open Meterperter session via user Ryan")
+![open Meterperter session via user Ryan](/Images/open-shell-session.PNG "open Meterperter session via user Ryan")
 
 After that it is seen that a meterpreter session was opened. Once open search through the folders and files to find the flag.
 
-![Meterperter session opened](/Images/meterpreter-session-opened.png "Meterperter session opened")
+![Meterperter session opened](/Images/meterpreter-session-opened.PNG "Meterperter session opened")
 
 ### Find and capture the flag.
 Once going back up 3 folders a flag.txt file was found.
@@ -219,4 +219,4 @@ Results:
 
 `b1ng0w@5h1sn@m0`
 
-![captured flag](/Images/captured-flag.png "captured flag")
+![captured flag](/Images/captured-flag.PNG "captured flag")
